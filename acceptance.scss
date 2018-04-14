@@ -1,0 +1,53 @@
+.md-checkbox {
+  position: relative;
+  text-align: left;
+}
+.md-checkbox.md-checkbox-inline {
+  display: inline-block;
+}
+.md-checkbox .wpcf7-list-item-label {
+  cursor: pointer;
+}
+.md-checkbox .wpcf7-list-item-label::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.md-checkbox .wpcf7-list-item-label::before {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 1px solid $darkgray-color;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background .3s;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.md-checkbox input[type="checkbox"] {
+  outline: 0;
+  margin-right: 1rem;
+  visibility: visible;
+}
+.md-checkbox input[type="checkbox"]:checked + .wpcf7-list-item-label::before {
+  background: $tertiary-color;
+  border: none;
+}
+.md-checkbox input[type="checkbox"]:checked + .wpcf7-list-item-label::after {
+  transform: rotate(-45deg);
+  top: 5px;
+  left: 4px;
+  width: 12px;
+  height: 6px;
+  border: 2px solid #fff;
+  border-top-style: none;
+  border-right-style: none;
+}
+.md-checkbox input[type="checkbox"]:disabled + .wpcf7-list-item-label::before {
+  border-color: rgba(0, 0, 0, 0.26);
+}
+.md-checkbox input[type="checkbox"]:disabled:checked + .wpcf7-list-item-label::before {
+  background: rgba(0, 0, 0, 0.26);
+}
